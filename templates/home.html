@@ -3,54 +3,33 @@
   <head>
     <title>Career Website</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-      h1 {
-        font-size: 40px;
-        font-family: Roboto;
-        font: weight normal;
-        color:rgb(100,100,100);
-        text-align: center
-      }
-      
       #banner {
+        height: 400px;
         width:100%;
-        height:450px;
-        object-fit:cover
-      }
-      
-      h2 {
-        font-size: 32px;
-        font-family: Roboto;
-        font: weight normal;
-        color:rgb(100,100,100);
-        text-align: center
-      }
-
-      .bodytext {
-        font-size: 32px;
-        font-family: Roboto;
-        font: weight normal;
-        color:rgb(80,80,80);
-      }
-
-      #container {
-        max-width:900px;
-        margin: 0 auto 0 auto;
+        object-fit: cover;
       }
     </style>
   </head>
   <body>
-    <div id='container'>
-    <h1>Careers Website</h1>
-    <img id="banner" src="https://web-dev-python-flask--lakshminaraya87.repl.co/static/banner.jpg">
+    <div class = "container">
+    <h1 class = "text-center mt-2 mb-4">Careers Website</h1>
+    <img class="img-fluid" id = "banner" src="https://web-dev-python-flask--lakshminaraya87.repl.co/static/banner.jpg">
     <h2>About</h2>
-    <p class='bodytext'>
+    <p class = "lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet hendrerit justo, ut pharetra dolor. Sed id leo ex. Nam vitae finibus nunc. Aenean vehicula posuere nisi, lacinia mattis dui condimentum eu. Maecenas non ante rutrum, fringilla massa non, consectetur eros. Proin cursus in magna et laoreet. Fusce molestie, nulla quis pretium malesuada, metus dui tristique justo, id luctus turpis quam commodo orci. Donec tortor elit, luctus eu justo vel, malesuada consectetur felis. Maecenas ultrices velit nec urna rhoncus, ac porta arcu mollis. Vestibulum blandit malesuada maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec placerat turpis sit amet ipsum sollicitudin laoreet. Donec eget odio eget justo efficitur sagittis ac in purus. Vivamus id purus a risus ullamcorper vestibulum. Ut elementum magna non ipsum sollicitudin, in mollis urna cursus. Curabitur vitae volutpat lorem, eget rutrum metus.
     </p>
-    <h2>Open Positions</h2>
-    <p class='bodytext'>Show jobs here</p>
-    <div style='text-align:center'>
-      <button>Submit</button>
+    <h2 class = "text-center mt-2 mb-4">Open Positions</h2>
+    <p>
+      {% for job in jobs %}
+        {%include 'jobitem.html' %}
+      {% endfor %}
+    </p>
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg">Submit</button>
       <p>Copyright 2023</p>
     </div>
     </div>
