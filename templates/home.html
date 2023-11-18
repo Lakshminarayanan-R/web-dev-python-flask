@@ -20,9 +20,16 @@
     <h1 class = "text-center mt-2 mb-4">Careers Website</h1>
     <img class="img-fluid" id = "banner" src="https://web-dev-python-flask--lakshminaraya87.repl.co/static/banner.jpg">
     <h2>About</h2>
+      <div class='row'>
+      <div class='col-md-6'>
     <p class = "lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet hendrerit justo, ut pharetra dolor. Sed id leo ex. Nam vitae finibus nunc. Aenean vehicula posuere nisi, lacinia mattis dui condimentum eu. Maecenas non ante rutrum, fringilla massa non, consectetur eros. Proin cursus in magna et laoreet. Fusce molestie, nulla quis pretium malesuada, metus dui tristique justo, id luctus turpis quam commodo orci. Donec tortor elit, luctus eu justo vel, malesuada consectetur felis. Maecenas ultrices velit nec urna rhoncus, ac porta arcu mollis. Vestibulum blandit malesuada maximus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec placerat turpis sit amet ipsum sollicitudin laoreet. Donec eget odio eget justo efficitur sagittis ac in purus. Vivamus id purus a risus ullamcorper vestibulum. Ut elementum magna non ipsum sollicitudin, in mollis urna cursus. Curabitur vitae volutpat lorem, eget rutrum metus.
     </p>
+      </div>
+        <div class='d-none d-md-block col-md-6'>
+      <img src='/static/people.jpg' style='height:320px; object-fit:cover;'>
+        </div>
+      </div>
     <h2 class = "text-center mt-2 mb-4">Job Openings</h2>
     <p>
       {% for job in jobs %}
@@ -31,8 +38,13 @@
     </p>
     <div class="text-center">
       <button class="btn btn-primary btn-lg">Submit</button>
+      <p>
+        <a href="mailto:lakshminarayanan.ravikumar@gmail.com?subject=Question%20about%20Job%20Openings&body=My%20Name%20%3A%20%3Cyour%20name%20here%3E%0D%0AMy%20question%20%3A%20%3Center%20your%20question%20here%3E" type="button">Contact Us</a>
+      </p>
+
       <p>Copyright 2023</p>
     </div>
     </div>
   </body>
+    {% include 'footer.html' %}
 </html>
