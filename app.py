@@ -1,5 +1,6 @@
 from flask import Flask,render_template,jsonify
-from database import load_jobs_from_db
+from database import load_jobs_from_db,load_jobs_from_db1
+
 
 app = Flask(__name__)
     
@@ -11,7 +12,16 @@ def hello_world():
 
 @app.route('/api/jobs')
 def list_jobs():
-  return jsonify(jobs)
+  jobs = load_jobs_from_db()
+  return jsonify(list(jobs))
+
+@app.route('/jobs/<id>')
+def show_job(id):
+  job = load_jobs_from_db1(id)
+  if not job:
+    return "Not Found", 404
+  else:
+    return render_template('jobpage.html',job=job)
   
 print(__name__)
 if __name__ == "__main__":
